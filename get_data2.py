@@ -23,7 +23,7 @@ for item in dict_old:
         temp = json.loads("{}")
         try:
             for hq in json.loads(data)["hq"]:
-                temp.update({hq[0].replace('-', ''): [hq[6], hq[6]]})
+                temp.update({hq[0].replace('-', ''): [hq[5], hq[6], float(hq[8])/float(hq[7])*100]})
             file_name = "data/" + str(item[0]).zfill(6) + ".json"
             f = open(file_name, "w", encoding="utf-8")
             json.dump(temp, f, indent=4, ensure_ascii=False)
